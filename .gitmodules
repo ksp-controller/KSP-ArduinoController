@@ -1,6 +1,6 @@
-[submodule "lib/SerialLib"]
-	path = lib/SerialLib
-	url = https://github.com/ksp-controller/KSP-ArduinoSerialLibrary.git
-[submodule "lib/ComponentsLib"]
-	path = lib/ComponentsLib
+[submodule "src/ComponentsLib"]
+	path = src/ComponentsLib
 	url = https://github.com/ksp-controller/KSP-ArduinoComponentsLibrary.git
+[submodule "src/SerialLib"]
+	path = src/SerialLib
+	url = https://github.com/ksp-controller/KSP-ArduinoSerialLibrary.git
