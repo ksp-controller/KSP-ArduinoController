@@ -1,0 +1,52 @@
+#ifndef Definitions_h
+#define Definitions_h
+#include "Arduino.h"
+
+  #define DEBUG_CONTROLLER true
+  #define INITIAL_TEST_DELAY 3000
+
+//PIN DEFINITIONS
+  //LED/BUTTON 1
+  #define RCS_LED_PIN 10
+  #define RCS_BUTTON_PIN 46
+  //LED/BUTTON 2
+  #define SAS_LED_PIN 7
+  #define SAS_BUTTON_PIN 53
+  //ON/OFF SWITCHES
+  #define CHUTES_BUTTON_PIN 51
+  #define LADDER_BUTTON_PIN 49
+  #define LIGHT_BUTTON_PIN 50
+  #define SOLAR_BUTTON_PIN 48
+  #define LANDINGGEAR_BUTTON_PIN 47
+  #define BRAKES_BUTTON_PIN 52
+  //LED
+  #define EVA_LED_PIN 8 //ESCAPE VELOCITY ACHIEVED
+  #define DFX_LED_PIN 9 //DANGE G FORCE TOO EXTREME
+  #define SFL_LED_PIN 13 //SOLID FUEL LOW
+  #define LFL_LED_PIN 12 //LIQUID FUEL LOW
+  #define EFL_LED_PIN 11 //ELETRIC FUEL LOW
+  //LCDS
+  #define LCD_TOP_PIN 1
+  #define LCD_MID_PIN 1
+  #define LCD_BOT_PIN 1
+  //THROTTLE
+  #define THROTTLE_PIN A9
+  //LIGHT BUTTONS
+  #define STAGE_BUTTON_PIN 33
+  #define IGNITE_BUTTON_PIN 37
+  //JOYSTICK 1
+  #define JOYSTICK1_X_LEFT_PIN 1
+  #define JOYSTICK1_X_RIGHT_PIN 1
+  #define JOYSTICK1_Y_TOP_PIN 1
+  #define JOYSTICK1_Y_BOTTOM_PIN 1
+  //JOYSTICK 2
+  #define JOYSTICK1_X_LEFT_PIN 1
+  #define JOYSTICK1_X_RIGHT_PIN 1
+  #define JOYSTICK1_Y_TOP_PIN 1
+  #define JOYSTICK1_Y_BOTTOM_PIN 1
+
+//Components stuff
+  #define THROTTLE_MIN_VALUE 0
+  #define THROTTLE_MAX_VALUE 1000
+
+#endif
