@@ -7,6 +7,8 @@
 #include "./ComponentsLib/src/SwitchButton.h"
 #include "./ComponentsLib/src/PushButton.h"
 #include "./ComponentsLib/src/Potentiometer.h"
+#include "./ComponentsLib/src/LCD.h"
+#include "./ComponentsLib/src/Joystick.h"
 //
 #include "./SerialLib/src/serialLib/GameDefinitions.h"
 //
@@ -17,15 +19,18 @@ class Controller
     void loop();
     void dumpValues();
     SerializedVesselControls* getSerializedValues();
+    void setValues(VesselData vesselData);
   private:
     LightController *_sasLED, *_rcsLED, *_evaLED, *_dfxLED, *_sflLED, *_lflLED, *_eflLED;
     SwitchButton *_sasBtn, *_rcsBtn, *_chutesBtn, *_lightBtn, *_ladderBtn, *_lgBtn, *_solarBtn, *_brakesBtn;
     PushButton *_stageBtn, *_igniteBtn;
     Potentiometer *_throttle;
-    //LCD *_topLCD, *_midLCD, *_bottomLCD;
+    LCD *_topLCD, *_midLCD, *_bottomLCD;
     //SevenSegment *_topLCD;
-    //Joystick *_rotationJoy, *_translationJoy;
+    Joystick *_rotationJoy, *_translationJoy;
     void _initComponents();
     void _runTest();
+    //
+    unsigned long _lcdRefresh;
 };
 #endif
