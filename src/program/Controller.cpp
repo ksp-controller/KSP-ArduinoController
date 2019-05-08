@@ -57,7 +57,8 @@ SerializedVesselControls* Controller::getSerializedValues()
   SetControlStatus(control, Light, !_lightBtn->isOn()); //inverted
   SetControlStatus(control, Breaks, !_brakesBtn->isOn()); //inverted
   SetControlStatus(control, Gear, !_lgBtn->isOn()); //inverted
-  SetControlStatus(control, Stage, ( _stageBtn->isPressed() || _igniteBtn->isPressed()));
+  // SetControlStatus(control, Stage, ( _stageBtn->isPressed() || _igniteBtn->isPressed()));
+  SetControlStatus(control, Stage, !_ladderBtn->isOn());
   control->Throttle = 1000.f - _throttle->getCurrentValue(); //inverted
   //
   JoystickValue tran = _translationJoy->getCurrentValue();
@@ -87,8 +88,8 @@ void Controller::setValues(VesselData vesselData)
     _topLCD->writeOnLine("SPEED: " + String(vesselData.Vsurf > 999 ? String((int)(vesselData.Vsurf)) : String(vesselData.Vsurf)) + "m/s", 1);
     _topLCD->writeOnLine("VSPEED: " + (vesselData.VVI > 99 ? String((int)(vesselData.VVI)) : String(vesselData.VVI)) + "m/s", 2);
     _midLCD->clearDisplay();
-    _midLCD->writeOnLine("LAT: " + String(vesselData.Lat), 1);
-    _midLCD->writeOnLine("LONG: " + String(vesselData.Lon), 2);
+    _midLCD->writeOnLine("GEE: " + String(vesselData.G), 1);
+    _midLCD->writeOnLine("TIME: " + String(vesselData.MissionTime), 2);
     _bottomLCD->clearDisplay();
     _bottomLCD->writeOnLine("ALT: " + String(vesselData.Alt), 1);
     _bottomLCD->writeOnLine("ATMO DENS.: " + String(vesselData.Density), 2);
@@ -112,7 +113,7 @@ void Controller::_initComponents() {
 void Controller::_runTest() {
   _sasLED->setState(HIGH), _rcsLED->setState(HIGH), _evaLED->setState(HIGH), _dfxLED->setState(HIGH), _sflLED->setState(HIGH), _lflLED->setState(HIGH), _eflLED->setState(HIGH);
   _topLCD->clearDisplay(); _topLCD->writeOnLine("SPEED: 0m/s", 1); _topLCD->writeOnLine("VSPEED: 0m/s", 2);
-  _midLCD->clearDisplay(); _midLCD->writeOnLine("LAT: 0", 1); _midLCD->writeOnLine("LONG: 0", 2);
+  _midLCD->clearDisplay(); _midLCD->writeOnLine("GEE: 0", 1); _midLCD->writeOnLine("TIME: 0", 2);
   _bottomLCD->clearDisplay(); _bottomLCD->writeOnLine("ALT: 0", 1); _bottomLCD->writeOnLine("ATMOS DENS.: 0", 2);
   delay(INITIAL_TEST_DELAY);
   //7SEG?

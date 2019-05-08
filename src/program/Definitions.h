@@ -51,6 +51,6 @@
   #define JOYSTICK_MIN 0
   #define JOYSTICK_MAX 1000
   //
-  #define LCD_REFRESH_DELAY 250
+  #define LCD_REFRESH_DELAY 350
 
 #endif
